@@ -11,7 +11,7 @@ class FileHelper extends Concrete5_Helper_File {
 		ob_clean();
 		header('Content-type: application/octet-stream');
 		$filename = basename($file);
-		$asciiname = mb_convert_encoding($filename, "US-ASCII", "UTF-8");
+		$asciiname = mb_convert_encoding($filename, "US-ASCII", APP_CHARSET);
 		if ( $filename == $asciiname ) {
 			header("Content-Disposition: attachment; filename=\"$filename\"");
 		} else {
